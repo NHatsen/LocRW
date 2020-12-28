@@ -29,29 +29,29 @@ List<LocRW.TriggerClass> list = new List<LocRW.TriggerClass>();
 
 #### Methods
 
-###### Read a loc file:
+#### Read a loc file:
 
 ```c#
 list = LocRW.LocFile.ReadLocFile(string path);
 ```
 
-Read a .loc file specified for the path provided and returns a list of local messages.
+Reads a .loc file specified for the path provided and returns a list of local messages.
 
-###### Write a loc file:
+#### Write a loc file:
 
 ```c#
 LocRW.LocFile.WriteLocFile(string path, List<TriggerClass> list);
 ```
 
-Creates a .loc file using the path and list of messages specified. 
+Creates a .loc file using the provided path and list of messages. 
 
-###### Read a csv file:
+#### Read a csv file:
 
 ```c#
 list = LocRW.CsvFile.ReadCSV(string path);
 ```
 
-Read a .csv file specified for the path provided and returns a list of local messages. CSV file has to be written using the following pattern:
+Reads a .csv file specified by the provided path and returns a list of local messages. CSV file has to be written using the following pattern:
 
 ```xml
 Value,Message
@@ -59,9 +59,7 @@ Value,Message
 2,Second message
 ```
 
-
-
-###### Write a csv file:
+#### Write a csv file:
 
 ```c#
 LocRW.CsvFile.WriteCSV(string path, List<TriggerClass> triggers);
