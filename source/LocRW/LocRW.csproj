@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CsvTest.cs" />
     <Compile Include="LocFile.cs" />
     <Compile Include="CsvFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

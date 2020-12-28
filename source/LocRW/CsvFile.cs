@@ -9,6 +9,9 @@ using System.Globalization;
 
 namespace LocRW
 {
+    /// <summary>
+    /// Contains all the methods used to read/write csv files.
+    /// </summary>
     public class CsvFile
     {
         public static void WriteCSV(string path, List<TriggerClass> triggers)

@@ -9,8 +9,12 @@ using OpenMcdf;
 
 namespace LocRW
 {
+    /// <summary>
+    /// Contains all the methods used to read/write loc files.
+    /// </summary>
     public class LocFile
     {
+        #region public methods
         /// <summary>
         /// Read data from .loc file.
         /// </summary>
@@ -40,6 +44,25 @@ namespace LocRW
             }
             return list;
         }
+
+        /// <summary>
+        /// Creates a .loc file using the data provided.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="list"></param>
+        public static void WriteLocFile(string path, List<TriggerClass> list)
+        {
+            CompoundFile cf = new CompoundFile();
+            CFStream ls409 = cf.RootStorage.AddStream("ls00000409");
+            CFStream messages = cf.RootStorage.AddStream("Messages");
+
+            messages.SetData(SetMessagesForCF(list));
+            ls409.SetData(SetLs409forCF(list));
+
+            cf.Save(path);
+            cf.Close();
+        }
+        #endregion
 
 
         /// <summary>
@@ -120,23 +143,7 @@ namespace LocRW
             return values;
         }
 
-        /// <summary>
-        /// Creates a .loc file using the path and data provided.
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="list"></param>
-        public static void WriteLocFile(string path, List<TriggerClass> list)
-        {
-            CompoundFile cf = new CompoundFile();
-            CFStream ls409 = cf.RootStorage.AddStream("ls00000409");
-            CFStream messages = cf.RootStorage.AddStream("Messages");
 
-            messages.SetData(SetMessagesForCF(list));
-            ls409.SetData(SetLs409forCF(list));
-
-            cf.Save(path);
-            cf.Close();
-        }
 
         /// <summary>
         /// Set data for Messages stream.
