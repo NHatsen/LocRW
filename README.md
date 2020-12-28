@@ -1,4 +1,4 @@
-# LocEW
+# LocRW
 
 LocRW is a dll that let's you read a FTView .loc file, returning a list of the local messages. Also, it's possible to write a new .loc file is you provide a valid list of local messages.
 
