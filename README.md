@@ -69,15 +69,34 @@ Creates a .csv file using the path and list of messages specified.
 
 
 
+## Dependencies
+
+The following Nuget Packages are needed to compile the project:
+
+- CsvHelper by Josh Close
+- OpenMcfd by ironfede
+
+
+
+## Quick test
+
+You will find the compiled test project in the Release section. After download and unrar the file, run **TestLocRW.exe** and open some .loc files.
+
+
+
 ## To Do
 
 Add some error managing and feedback anytime an operation is completed.
 
 Add some options to read/write csv files using different separators and headers.
 
+
+
 ## Version History
 
 See [CHANGELOG.md](CHANGELOG.md).
+
+
 
 ## Copyright and License
 
